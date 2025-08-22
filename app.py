@@ -2,10 +2,10 @@ import streamlit as st
 
 st.title("Authentication")
 
-if not st.experimental_user.is_logged_in:
+if not st.user.is_logged_in:
     if st.button("Authenticate"):
         st.login("google")
 else:
-    st.json(st.experimental_user)
-    st.header(f"Hello, {st.experimental_user.name}")
-    st.image(st.experimental_user.picture)
+    st.json(st.user)
+    st.header(f"Hello, {st.user.name}")
+    st.image(st.user.picture)
