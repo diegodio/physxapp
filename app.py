@@ -1,17 +1,7 @@
-# import streamlit as st
-
-# st.title("Authentication")
-
-# if not st.user.is_logged_in:
-#     if st.button("Authenticate"):
-#         st.login("google")
-# else:
-#     st.json(st.user)
-#     st.header(f"Hello, {st.user.name}")
-#     st.image(st.user.picture)
-
-
 import streamlit as st
+import requests
+import json
+from datetime import datetime
 
 st.set_page_config(page_title="Auth demo")
 st.title("Authentication")
@@ -30,3 +20,16 @@ st.header(f"Olá, {name}")
 picture = getattr(st.user, "picture", None)
 if picture:
     st.image(picture, width=120)
+
+
+
+sub = st.user.sub
+
+LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
+
+# Criar uma venda (POST)
+dados = {'login_time': datetime.now().strftime("%d/%m/%Y %H:%M:%S")}
+requisicao = requests.post(f'{LINK}/{sub}/logininfo/.json', data=json.dumps(dados))
+print(requisicao)
+print(requisicao.text)
+
