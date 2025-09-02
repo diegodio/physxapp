@@ -51,8 +51,8 @@ def plotar_flecha(ax, n_vetores_dir = 1, n_vetores_esq = 2, center_x = 0.5, cent
             list_force_values_right.append(valor_vetor)
 
             ax.annotate('', xy=(x_end, y_end), xytext=(x_start, y_start),
-                        arrowprops=dict(facecolor='red', edgecolor='red', width=6, headwidth=25, headlength=20, shrinkA=0, shrinkB=0))
-            ax.text(x_end+espaco_flecha_texto, y_end, f"{valor_vetor} N", va="center", ha="left", fontsize=14, color="red")
+                        arrowprops=dict(facecolor='black', edgecolor='black', width=6, headwidth=25, headlength=20, shrinkA=0, shrinkB=0))
+            ax.text(x_end+espaco_flecha_texto, y_end, f"{valor_vetor} N", va="center", ha="left", fontsize=14, color="black")
 
     ##########
     vetores_esq = [True] * n_vetores_esq + [False] * (5-n_vetores_esq)
@@ -75,8 +75,8 @@ def plotar_flecha(ax, n_vetores_dir = 1, n_vetores_esq = 2, center_x = 0.5, cent
             list_force_values_left.append(valor_vetor)
 
             ax.annotate('', xy=(x_end, y_end), xytext=(x_start, y_start),
-                        arrowprops=dict(facecolor='red', edgecolor='red', width=6, headwidth=25, headlength=20, shrinkA=0, shrinkB=0))
-            ax.text(x_end-espaco_flecha_texto, y_end, f"{valor_vetor} N", va="center", ha="left", fontsize=14, color="red")
+                        arrowprops=dict(facecolor='black', edgecolor='black', width=6, headwidth=25, headlength=20, shrinkA=0, shrinkB=0))
+            ax.text(x_end-espaco_flecha_texto, y_end, f"{valor_vetor} N", va="center", ha="left", fontsize=14, color="black")
 
     total_force_right = sum(list_force_values_right)
     total_force_left = sum(list_force_values_left)
