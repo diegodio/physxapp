@@ -23,20 +23,21 @@ def sidebarRanking():
     
     turma = getTurma(getattr(st.user, "email", "email_x"))
 
-    
-    requisicao = requests.get(f'{LINK}/{turma}/.json')
-    dic_requisicao = requisicao.json()
-    with st.sidebar:
-        for nome in list(dic_requisicao.keys()):
-            key = list(dic_requisicao[nome]['acertos_erros_fr'].keys())
-            acertos = dic_requisicao[nome]['acertos_erros_fr'][key[0]]['acertos']
+    try:
+        requisicao = requests.get(f'{LINK}/{turma}/.json')
+        dic_requisicao = requisicao.json()
+        with st.sidebar:
+            for nome in list(dic_requisicao.keys()):
+                key = list(dic_requisicao[nome]['acertos_erros_fr'].keys())
+                acertos = dic_requisicao[nome]['acertos_erros_fr'][key[0]]['acertos']
 
-            # st.write(key[0])
-            st.write(f'{nome} - {acertos}')
+                # st.write(key[0])
+                st.write(f'{nome} - {acertos}')
 
-            
-    ultima_key = list(dic_requisicao.keys())[-1]
-    print(ultima_key)
+                
+        ultima_key = list(dic_requisicao.keys())[-1]
+    except:
+        pass
     # st.write(dic_requisicao[ultima_key])
     # st.write(dic_requisicao[ultima_key]['acertos'])
     # st.write(dic_requisicao[ultima_key]['erros'])
