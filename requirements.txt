@@ -2,3 +2,4 @@ streamlit
 streamlit-oauth
 authlib
 requests
+matplotlib
