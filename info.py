@@ -1,4 +1,4 @@
-emails_alunos_1MA = {
+emails_alunos_1MC = {
     'rafaela.aquino@escola.pr.gov.br': 'RAFAELA ZORDAN AQUINO',
     'luiz.szlachta.oliveira@escola.pr.gov.br': 'LUIZ EDUARDO SZLACHTA DE OLIVEIRA',
     'isadora.gibin.mendes@escola.pr.gov.br': 'ISADORA GIBIN MENDES',

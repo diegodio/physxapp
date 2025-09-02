@@ -6,11 +6,11 @@ from info import *
 LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 
 def getTurma(email):
-    if email in emails_alunos_1MA:
-        return '1MA'
+    if email in emails_alunos_1MC:
+        return '1MC'
     
 def isLoggedIn():
-    if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos_1MA.keys():
+    if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos_1MC.keys():
         return True
     else:
         return False
@@ -18,7 +18,7 @@ def isLoggedIn():
 def firstLogIn():
     if isLoggedIn():
         sub = getattr(st.user, "sub", "sub_x")
-        name = emails_alunos_1MA[getattr(st.user, "email", "email_x")]
+        name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
         
         turma = getTurma(getattr(st.user, "email", "email_x"))
 
@@ -52,7 +52,7 @@ def firstLogIn():
 def save_acertos_erros(acertos, erros):
     
     sub = getattr(st.user, "sub", "sub_x")
-    name = emails_alunos_1MA[getattr(st.user, "email", "email_x")]
+    name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
     turma = getTurma(getattr(st.user, "email", "email_x"))
 
     try:
