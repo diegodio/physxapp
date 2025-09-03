@@ -41,5 +41,6 @@ emails_alunos_1MC = {
     'agatha.santos.costa@escola.pr.gov.br': 'AGATHA SANTOS COSTA',
     'monte.sophia@escola.pr.gov.br': 'SOPHIA LARIANE PARENTE SOUZA DO MONTE',
     'f.diego@escola.pr.gov.br': 'DIEGO DE DIO FERREIRA',
-    'dio.diego1@gmail.com': 'diego de dio ferreira'
+    'dio.diego1@gmail.com': 'diego de dio ferreira',
+    'emanuel.barroso@escola.pr.gov.br': 'EMANUEL DA SILVA JUSTUS BARROSO'
 }
