@@ -17,7 +17,7 @@ st.title("PhysX")
 LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 
 
-sidebar()    
+sidebar()
 
 if isLoggedIn():
 

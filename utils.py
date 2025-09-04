@@ -6,15 +6,11 @@ from info import *
 LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 
 def getTurma(email):
-    if email in emails_alunos_1MC.keys():
+    if email in emails_alunos_1MC:
         return '1MC'
-    if email in emails_alunos_1MA.keys():
-        return '1MA'
     
 def isLoggedIn():
-    emails_alunos = list(emails_alunos_1MC.keys()) + list(emails_alunos_1MA.keys())
-    print(type(emails_alunos))
-    if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos:
+    if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos_1MC.keys():
         return True
     else:
         return False
@@ -22,8 +18,7 @@ def isLoggedIn():
 def firstLogIn():
     if isLoggedIn():
         sub = getattr(st.user, "sub", "sub_x")
-        dic_emails_alunos = emails_alunos_1MA | emails_alunos_1MC
-        name = dic_emails_alunos[getattr(st.user, "email", "email_x")]
+        name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
         
         turma = getTurma(getattr(st.user, "email", "email_x"))
 
