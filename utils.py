@@ -13,7 +13,7 @@ def getTurma(email):
     
 def isLoggedIn():
     emails_alunos = list(emails_alunos_1MC.keys()) + list(emails_alunos_1MA.keys())
-
+    print(type(emails_alunos))
     if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos:
         return True
     else:
@@ -22,7 +22,8 @@ def isLoggedIn():
 def firstLogIn():
     if isLoggedIn():
         sub = getattr(st.user, "sub", "sub_x")
-        name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
+        dic_emails_alunos = emails_alunos_1MA | emails_alunos_1MC
+        name = dic_emails_alunos[getattr(st.user, "email", "email_x")]
         
         turma = getTurma(getattr(st.user, "email", "email_x"))
 

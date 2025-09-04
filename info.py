@@ -40,8 +40,6 @@ emails_alunos_1MC = {
     'bryan.massarim.martins@escola.pr.gov.br': 'BRYAN MASSARIM MARTINS',
     'agatha.santos.costa@escola.pr.gov.br': 'AGATHA SANTOS COSTA',
     'monte.sophia@escola.pr.gov.br': 'SOPHIA LARIANE PARENTE SOUZA DO MONTE',
-    'f.diego@escola.pr.gov.br': 'DIEGO DE DIO FERREIRA',
-    'dio.diego1@gmail.com': 'diego de dio ferreira',
     'emanuel.barroso@escola.pr.gov.br': 'EMANUEL DA SILVA JUSTUS BARROSO'
 }
 
@@ -83,5 +81,7 @@ emails_alunos_1MA = {
     "gabrielly.hilario@escola.pr.gov.br": "GABRIELLY NEGRELI HILARIO",
     "heloisa.santos.alves@escola.pr.gov.br": "HELOISA VITHORIA DOS SANTOS ALVES",
     "flavia.souza.franca@escola.pr.gov.br": "FLAVIA SOUZA FRANCA",
-    "davi.torres.moura@escola.pr.gov.br": "DAVI TORRES DE MOURA"
+    "davi.torres.moura@escola.pr.gov.br": "DAVI TORRES DE MOURA",
+    'f.diego@escola.pr.gov.br': 'DIEGO DE DIO FERREIRA',
+    'dio.diego1@gmail.com': 'diego de dio ferreira',
 }
