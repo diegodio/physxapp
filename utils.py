@@ -8,9 +8,13 @@ LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 def getTurma(email):
     if email in emails_alunos_1MC:
         return '1MC'
+    if email in emails_alunos_1MA:
+        return '1MA'
     
 def isLoggedIn():
-    if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos_1MC.keys():
+    emails_alunos = list(emails_alunos_1MC.keys()) + list(emails_alunos_1MA.keys())
+
+    if getattr(st.user, "is_logged_in", False) and getattr(st.user, "email", "email_x") in emails_alunos:
         return True
     else:
         return False
