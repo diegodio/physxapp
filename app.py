@@ -17,14 +17,6 @@ st.title("PhysX")
 LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 
 
-# def save_login_time(link, sub, nome):
-#     # Criar uma venda (POST)
-#     dados = {'login_time': (datetime.now() - timedelta(hours=3)).strftime("%d/%m/%Y %H:%M:%S")}
-#     requisicao = requests.post(f'{link}/{sub + ' - ' + nome}/logininfo/.json', data=json.dumps(dados))
-#     # print(requisicao)
-#     # print(requisicao.text)
-
-
 sidebar()    
 
 if isLoggedIn():

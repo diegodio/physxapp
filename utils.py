@@ -6,9 +6,9 @@ from info import *
 LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 
 def getTurma(email):
-    if email in emails_alunos_1MC:
+    if email in emails_alunos_1MC.keys():
         return '1MC'
-    if email in emails_alunos_1MA:
+    if email in emails_alunos_1MA.keys():
         return '1MA'
     
 def isLoggedIn():

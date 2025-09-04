@@ -87,6 +87,8 @@ def sideBarLoggedIn():
         sidebarScore()
         sidebarRanking()
 
+        if st.button('teste de pagina'):
+            st.switch_page('pages/1_📊_Dashboard.py')
     given_name = getattr(st.user, "given_name", "Usuário")
     st.header(f"Olá, {given_name}!")
 
