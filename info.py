@@ -109,7 +109,7 @@ emails_alunos_1MC = {
     'guilherme.borges.silva20@escola.pr.gov.br': 'GUILHERME MORI BORGES DA SILVA',
     'emanuel.marigo@escola.pr.gov.br': 'EMANUEL ALVES MARIGO',
     'beatriz.amanda.silva@escola.pr.gov.br': 'BEATRIZ AMANDA DA SILVA',
-    'daniel.agostini@escola.pr.gov.br': 'DANIEL AGOSTINI',
+    #'daniel.agostini@escola.pr.gov.br': 'DANIEL AGOSTINI',
     'miley.torrez@escola.pr.gov.br': 'MILEY BEZERRA TORREZ',
     'ornellas.luiz@escola.pr.gov.br': 'LUIZ FELIPE DE SOUZA ORNELLAS',
     'davi.bacelar.pacheco@escola.pr.gov.br': 'DAVI BACELAR PACHECO',
