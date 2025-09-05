@@ -10,12 +10,14 @@ import random
 from images import *
 from home import *
 from questions import *
+from utils import *
 
 st.set_page_config(page_title="PhysX App", layout='wide')
 st.title("PhysX")
 
 LINK = "https://physxapp-3dbf5-default-rtdb.firebaseio.com/"
 
+st.session_state.new_load = True
 
 sidebar()
 
