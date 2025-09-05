@@ -54,41 +54,41 @@ def save_acertos_erros(acertos, erros):
     if st.session_state.new_load == True:
         st.session_state.new_load = False
 
-    sub = getattr(st.user, "sub", "sub_x")
-    name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
-    turma = getTurma(getattr(st.user, "email", "email_x"))
-
-    try:
-        requisicao = requests.get(f'{LINK}/{turma}/{name}/acertos_erros_fr.json')
-        dic_requisicao = requisicao.json()
-
-        lista_keys = list(dic_requisicao.keys()) or []
-
-        # print(lista_keys)
-        # Deletar uma venda (DELETE)
-        for key in lista_keys:
-            url_exclude = f'{LINK}/{turma}/{name}/acertos_erros_fr/{key}.json'
-            requisicao = requests.delete(url_exclude)
-            # print(requisicao)
-            # print(requisicao.text) 
-            porcentagem = (100 * acertos / (acertos+erros)) if (acertos+erros) > 0 else 0
-
-            nota = (porcentagem/100)*40
-            
-            # Editar a venda (PATCH)
-            dados = {'acertos': acertos, 'erros': erros, 'porcentagem': porcentagem, 'nota': nota}
-            requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))  
-    except:
-        pass
-
-
-    porcentagem = (100 * acertos / (acertos+erros)) if (acertos+erros) > 0 else 0
-
-    nota = (porcentagem/100)*40
+        sub = getattr(st.user, "sub", "sub_x")
+        name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
+        turma = getTurma(getattr(st.user, "email", "email_x"))
     
-    # Editar a venda (PATCH)
-    dados = {'acertos': acertos, 'erros': erros, 'porcentagem': porcentagem, 'nota': nota}
-    requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))
+        try:
+            requisicao = requests.get(f'{LINK}/{turma}/{name}/acertos_erros_fr.json')
+            dic_requisicao = requisicao.json()
+    
+            lista_keys = list(dic_requisicao.keys()) or []
+    
+            # print(lista_keys)
+            # Deletar uma venda (DELETE)
+            for key in lista_keys:
+                url_exclude = f'{LINK}/{turma}/{name}/acertos_erros_fr/{key}.json'
+                requisicao = requests.delete(url_exclude)
+                # print(requisicao)
+                # print(requisicao.text) 
+                porcentagem = (100 * acertos / (acertos+erros)) if (acertos+erros) > 0 else 0
+    
+                nota = (porcentagem/100)*40
+                
+                # Editar a venda (PATCH)
+                dados = {'acertos': acertos, 'erros': erros, 'porcentagem': porcentagem, 'nota': nota}
+                requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))  
+        except:
+            pass
+    
+    
+        porcentagem = (100 * acertos / (acertos+erros)) if (acertos+erros) > 0 else 0
+    
+        nota = (porcentagem/100)*40
+        
+        # Editar a venda (PATCH)
+        dados = {'acertos': acertos, 'erros': erros, 'porcentagem': porcentagem, 'nota': nota}
+        requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))
 
 
 def conferir_resposta(resposta_correta, resposta_dada):
