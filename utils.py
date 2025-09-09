@@ -70,13 +70,13 @@ def save_acertos_erros(acertos, erros):
             requisicao = requests.delete(url_exclude)
             # print(requisicao)
             # print(requisicao.text) 
-            porcentagem = (100 * acertos / (acertos+erros)) if (acertos+erros) > 0 else 0
+            # porcentagem = (100 * acertos / (acertos+erros)) if (acertos+erros) > 0 else 0
 
-            nota = (porcentagem/100)*40
+            # nota = (porcentagem/100)*40
             
-            # Editar a venda (PATCH)
-            dados = {'acertos': acertos, 'erros': erros, 'porcentagem': porcentagem, 'nota': nota}
-            requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))  
+            # # Editar a venda (PATCH)
+            # dados = {'acertos': acertos, 'erros': erros, 'porcentagem': porcentagem, 'nota': nota}
+            # requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))  
     except:
         pass
 
