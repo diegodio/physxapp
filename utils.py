@@ -29,14 +29,15 @@ def firstLogIn():
             dic_requisicao = requisicao.json()
             # st.write(dic_requisicao)
 
-            ultima_key = list(dic_requisicao.keys())[-1]
+            key = list(dic_requisicao.keys())[0]
             # st.write(ultima_key)
             # st.write(dic_requisicao[ultima_key])
             # st.write(dic_requisicao[ultima_key]['acertos'])
             # st.write(dic_requisicao[ultima_key]['erros'])
 
-            st.session_state.acertos = dic_requisicao[ultima_key]['acertos']
-            st.session_state.erros = dic_requisicao[ultima_key]['erros']
+            st.session_state.acertos = dic_requisicao[key]['acertos']
+            st.session_state.erros = dic_requisicao[key]['erros']
+
         except:
             st.session_state.acertos = 0
             st.session_state.erros = 0
@@ -89,19 +90,47 @@ def save_acertos_erros(acertos, erros):
     requisicao = requests.post(f'{LINK}/{turma}/{name}/acertos_erros_fr.json', data=json.dumps(dados))
 
 
+# def conferir_resposta(resposta_correta, resposta_dada):
+#     name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
+#     turma = getTurma(getattr(st.user, "email", "email_x"))
+
+#     if resposta_correta == resposta_dada:
+#         requisicao = requests.get(f'{LINK}/{turma}/{name}/acertos_erros_fr.json')
+#         dic_requisicao = requisicao.json()
+
+#         lista_keys = list(dic_requisicao.keys()) or []
+
+        
+#         st.session_state.acertos = dic_requisicao[lista_keys[0]]['acertos'] + 1
+#     else:
+#         # if "erros" not in st.session_state:
+#         #     st.session_state.erros = 0
+        
+#         st.session_state.erros = dic_requisicao[lista_keys[0]]['erros'] + 1
+    
+#     save_acertos_erros(acertos = st.session_state.acertos, erros = st.session_state.erros)
+
 def conferir_resposta(resposta_correta, resposta_dada):
+    name = emails_alunos_1MC[getattr(st.user, "email", "email_x")]
+    turma = getTurma(getattr(st.user, "email", "email_x"))
+
     if resposta_correta == resposta_dada:
+        if "acertos" not in st.session_state:
+            st.session_state.acertos = 0
         requisicao = requests.get(f'{LINK}/{turma}/{name}/acertos_erros_fr.json')
         dic_requisicao = requisicao.json()
 
         lista_keys = list(dic_requisicao.keys()) or []
 
+
+        st.session_state.acertos += 1
+        # st.write(st.session_state.acertos)
         
-        st.session_state.acertos = dic_requisicao[lista_keys[0]]['acertos'] + 1
     else:
         # if "erros" not in st.session_state:
         #     st.session_state.erros = 0
+
+        st.session_state.erros += 1
         
-        st.session_state.erros = dic_requisicao[lista_keys[0]]['erros'] + 1
-    
+
     save_acertos_erros(acertos = st.session_state.acertos, erros = st.session_state.erros)
