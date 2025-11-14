@@ -130,8 +130,6 @@
 #     'maria.seregni.souza@escola.pr.gov.br': 'MARIA ELOISA SEREGNI DE SOUZA',
 #     'william.corte@escola.pr.gov.br': 'WILLIAM FERREIRA CORTE',
 #     'ester.monteiro@escola.pr.gov.br': 'ESTER CAMPOLI MONTEIRO',
-#     'f.diego@escola.pr.gov.br': 'DIEGO DE DIO FERREIRA',
-#     'dio.diego1@gmail.com': 'diego de dio ferreira',
 # }
 
 emails_alunos_1MC = {
